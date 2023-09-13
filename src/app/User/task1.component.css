@@ -1,0 +1,12 @@
+img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+h2{
+    text-align: center;
+}

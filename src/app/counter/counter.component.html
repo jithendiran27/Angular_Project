@@ -1,0 +1,11 @@
+<div class="counterContainer">
+  <button class="countBtn" (click)="increment()">👍 {{ count }}</button>
+  <button class="countBtn" (click)="decrement()">👎 {{ dcount }}</button>
+  <progress
+    type="range"
+    max="{{ count + dcount }}"
+    min="0"
+    value="{{ count }}"
+  ></progress>
+</div>
+<h2 *ngIf="awesomeText">You are Awesome</h2>

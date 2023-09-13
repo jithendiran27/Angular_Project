@@ -1,0 +1,11 @@
+.counterContainer{
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+.countBtn{
+    font-size: 30px;
+}
+h2{
+    text-align: center;
+}
