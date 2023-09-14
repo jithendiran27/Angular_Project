@@ -24,8 +24,4 @@
 />
 
 <button class="add-Movie-btn" (click)="addMovie()">Add New Movie</button>
-<app-movies
-  *ngFor="let mv of movies; let i = index"
-  [movie]="mv"
-  [idx]="i"
-></app-movies>
+<app-movies *ngFor="let mv of movies; let i = index" [movie]="mv"></app-movies>
