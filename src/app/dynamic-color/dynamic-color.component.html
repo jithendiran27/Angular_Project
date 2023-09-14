@@ -1,6 +1,5 @@
-<input
-  type="text"
-  id="textBox"
-  [style.background]="clr"
-  (input)="colorFinder($event)"
-/>
+<input type="text" id="textBox" [style.background]="clr" [(ngModel)]="clr" />
+<button (click)="colorAdder()">Add color</button>
+<app-color-box *ngFor="let color of colorList" [clr]="color"></app-color-box>
+<!-- <app-color-box clr="blue"></app-color-box>
+<app-color-box clr="green"></app-color-box> -->

@@ -9,9 +9,14 @@ export class DynamicColorComponent {
 
 // clr="red"
 clr = "";
+colorList=["orange","white","green"]
 
-colorFinder(event:any){
-   this.clr = event.target.value
+// colorFinder(event:any){
+//    this.clr = event.target.value
+// }
+
+colorAdder(){
+  this.colorList.push(this.clr)
 }
 
 }

@@ -1,0 +1,31 @@
+<input
+  type="text"
+  id="Movie-Name"
+  placeholder="Movie Name"
+  [(ngModel)]="movieName"
+/>
+<input
+  type="text"
+  id="Movie-Image"
+  placeholder="Poster Url"
+  [(ngModel)]="movieImage"
+/>
+<input
+  type="text"
+  id="Movie-Rating"
+  placeholder="Movie Ratings"
+  [(ngModel)]="movieRating"
+/>
+<input
+  type="text"
+  id="Movie-Description"
+  placeholder="Description"
+  [(ngModel)]="movieDescription"
+/>
+
+<button class="add-Movie-btn" (click)="addMovie()">Add New Movie</button>
+<app-movies
+  *ngFor="let mv of movies; let i = index"
+  [movie]="mv"
+  [idx]="i"
+></app-movies>

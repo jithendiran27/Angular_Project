@@ -7,6 +7,9 @@ import { Task1Component } from './User/task1.component';
 import { MoviesComponent } from './movies/movies.component';
 import { CounterComponent } from './counter/counter.component';
 import { DynamicColorComponent } from './dynamic-color/dynamic-color.component';
+import { ColorBoxComponent } from './color-box/color-box.component';
+import { FormsModule } from '@angular/forms';
+import { AddMoviesComponent } from './add-movies/add-movies.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { DynamicColorComponent } from './dynamic-color/dynamic-color.component';
     Task1Component,
     MoviesComponent,
     CounterComponent,
-    DynamicColorComponent
+    DynamicColorComponent,
+    ColorBoxComponent,
+    AddMoviesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
