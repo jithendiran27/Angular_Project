@@ -10,7 +10,13 @@ import { DynamicColorComponent } from './dynamic-color/dynamic-color.component';
 import { ColorBoxComponent } from './color-box/color-box.component';
 import { FormsModule } from '@angular/forms';
 import { AddMoviesComponent } from './add-movies/add-movies.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { WelcomeComponent } from './welcome/welcome.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +25,19 @@ import { AddMoviesComponent } from './add-movies/add-movies.component';
     CounterComponent,
     DynamicColorComponent,
     ColorBoxComponent,
-    AddMoviesComponent
+    AddMoviesComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatBadgeModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

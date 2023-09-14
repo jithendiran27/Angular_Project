@@ -1,8 +1,19 @@
 <!-- <section class="profile">
   <app-task1 *ngFor="let nm of profiles" [profile]="nm"></app-task1>
 </section> -->
-<section class="movies">
+<!-- <section class="movies">
   <app-add-movies> </app-add-movies>
-</section>
+</section> -->
 <!-- <app-dynamic-color></app-dynamic-color> -->
 <!-- <app-add-movies></app-add-movies> -->
+<header>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/users">Users</a></li>
+      <li><a routerLink="/movies">Movies</a></li>
+      <li><a routerLink="/add-movies">Add Movies</a></li>
+    </ul>
+  </nav>
+</header>
+<router-outlet></router-outlet>

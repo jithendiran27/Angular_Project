@@ -13,4 +13,16 @@ export class MoviesComponent {
   "summary": "Members of a black ops team must track and eliminate a gang of masked murderers."
 }
 @Input() movieName="";
+
+count=0;
+  increment(){
+    console.log("incrementing")
+    this.count++
+
+  }
+  dcount=0;
+  decrement(){
+    console.log("decrementing")
+    this.dcount++
+  }
 }
