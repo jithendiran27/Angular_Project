@@ -11,6 +11,13 @@
         <mat-icon *ngIf="show">expand_less</mat-icon>
         <mat-icon *ngIf="!show">expand_more</mat-icon>
       </button>
+      <button
+        (click)="movieDetailsPage()"
+        mat-icon-button
+        aria-label="Info page"
+      >
+        <mat-icon>info</mat-icon>
+      </button>
     </h2>
     <h4>⭐{{ movie.rating }}</h4>
   </div>

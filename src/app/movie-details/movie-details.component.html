@@ -1,0 +1,12 @@
+<section class="movieContainer">
+  <img src="{{ movie.poster }}" alt="{{ movie.name }}" class="poster" />
+  <div class="details">
+    <h2>
+      {{ movie.name }}
+    </h2>
+    <h4>⭐{{ movie.rating }}</h4>
+  </div>
+  <div class="description">
+    <p *ngIf="show">{{ movie.summary }}</p>
+  </div>
+</section>

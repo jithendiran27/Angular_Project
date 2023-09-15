@@ -18,6 +18,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component
     ColorBoxComponent,
     AddMoviesComponent,
     WelcomeComponent,
-    AddMovieFormComponent
+    AddMovieFormComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
