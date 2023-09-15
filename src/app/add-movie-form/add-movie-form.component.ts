@@ -7,24 +7,28 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./add-movie-form.component.css']
 })
 export class AddMovieFormComponent {
-
-  movieName:string=""
-movieImage=""
+movieId:string=""
+movieName:string=""
+movieImage:string=""
 movieRating:number=0
 movieDescription:string=""
+movieTrailer:string=""
 
 moviesList;
-  constructor(movieService: MovieService) {
-    this.moviesList = movieService.movies;
+  constructor(private movieService: MovieService) {
+    this.moviesList = movieService.getMovieList();
   }
   addMovie(){
-    const movie={
+    const newMovie={
+      "id":this.movieId,
       "name": this.movieName,
       "poster": this.movieImage,
       "rating": this.movieRating,
-      "summary": this.movieDescription
+      "summary": this.movieDescription,
+      "trailer":this.movieTrailer
     }
-    this.moviesList.push(movie)
+    this.movieService.setMovieList(newMovie)
     console.log("adding...")
   }
+  
 }

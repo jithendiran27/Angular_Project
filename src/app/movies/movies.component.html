@@ -1,11 +1,21 @@
 <section class="movieContainer">
   <img src="{{ movie.poster }}" alt="{{ movie.name }}" class="poster" />
   <div class="details">
-    <h2>{{ movie.name }}</h2>
+    <h2>
+      {{ movie.name }}
+      <button
+        (click)="toggleSummary()"
+        mat-icon-button
+        aria-label="Toggle Details"
+      >
+        <mat-icon *ngIf="show">expand_less</mat-icon>
+        <mat-icon *ngIf="!show">expand_more</mat-icon>
+      </button>
+    </h2>
     <h4>⭐{{ movie.rating }}</h4>
   </div>
   <div class="description">
-    <p>{{ movie.summary }}</p>
+    <p *ngIf="show">{{ movie.summary }}</p>
   </div>
   <div class="likeDislike">
     <!-- <button class="countBtn" (click)="increment()">👍 {{ count }}</button> -->

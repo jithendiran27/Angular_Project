@@ -25,4 +25,8 @@ count=0;
     console.log("decrementing")
     this.dcount++
   }
+  show=true;
+  toggleSummary(){
+    this.show = !this.show
+  }
 }
