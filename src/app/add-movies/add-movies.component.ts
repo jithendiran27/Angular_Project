@@ -1,5 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { Subscription } from 'rxjs';
+import { Movie } from '../app.component';
 
 @Component({
   selector: 'app-add-movies',
@@ -75,9 +77,29 @@ export class AddMoviesComponent {
 //     "rating": 8.8
 //   }
 // ]
-moviesList;
-constructor(movieService: MovieService) {
-    this.moviesList = movieService.movies;
+
+movieList: Array<Movie> = [];
+getMovieList: Subscription | any;
+  // movieService: any;
+constructor(private movieService: MovieService) {
+    // this.moviesList = movieService.movies;
+  }
+  ngOnInit() {
+    this.getMovieList = this.movieService
+      .getMovieListFromMockApi()
+      .subscribe((mvList: any) => {
+        this.movieList = mvList;
+      });
+  }
+
+  ngOnChanges() {
+    console.log('Changed: Input or Output');
+    console.log('Logging');
+  }
+
+  ngOnDestroy() {
+    console.log('Destory');
+    this.getMovieList.unsubscribe();
   }
 
 

@@ -19,15 +19,10 @@ moviesList;
     this.moviesList = movieService.getMovieList();
   }
   addMovie(){
-    const newMovie={
-      "id":this.movieId,
-      "name": this.movieName,
-      "poster": this.movieImage,
-      "rating": this.movieRating,
-      "summary": this.movieDescription,
-      "trailer":this.movieTrailer
-    }
-    this.movieService.setMovieList(newMovie)
+    // const newMovie=this.moviesList.value
+
+
+  
     console.log("adding...")
   }
   

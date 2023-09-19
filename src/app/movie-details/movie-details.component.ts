@@ -6,5 +6,6 @@ import { MoviesComponent } from '../movies/movies.component';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent {
-
+  id: string = '';
+  movie: any;
 }

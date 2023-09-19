@@ -19,6 +19,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     MatFormFieldModule,
     MatInputModule,
     MatBadgeModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

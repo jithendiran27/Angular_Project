@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import{Movie}from './app.component'
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
-  movies=[
+  movies: Array<Movie>=[
     {
       "id": "99",
       "name": "Vikram",
@@ -97,10 +98,27 @@ export class MovieService {
   ]
   
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getMovieList(){
     return this.movies
+  }
+  getMovieListFromMockApi(){
+    return this.http.get<Movie>(
+      'https://64f6f4259d7754084952d8a9.mockapi.io/movies'
+    );
+  }
+
+  // addMovie(){
+  //   return this.http.post<Movie[]>(
+  //     'https://64f6f4259d7754084952d8a9.mockapi.io/movies', movie
+  //   )
+  // }
+
+  deleteMovieById(id:string){
+    return this.http.delete<Movie>(
+      `https://64f6f4259d7754084952d8a9.mockapi.io/movies/${id}`
+    );
   }
 
   setMovieList(newMovie:Movie){

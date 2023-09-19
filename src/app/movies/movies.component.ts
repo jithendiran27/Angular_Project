@@ -1,5 +1,6 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movies',
@@ -16,6 +17,9 @@ export class MoviesComponent {
   "trailer":""
 }
 @Input() movieName="";
+// @Output() removeMovie = new EventEmitter();
+
+
 
 count=0;
   increment(){
@@ -32,10 +36,18 @@ count=0;
   toggleSummary(){
     this.show = !this.show
   }
-  constructor(private router:Router){
+  constructor(private router:Router, private movieService:MovieService){
 
   }
   movieDetailsPage(){
      this.router.navigate(['/movies',this.movie.id])
   }
+  deleteMovie(){
+    this.movieService.deleteMovieById(this.movie.id).subscribe(() => {
+      console.log('Movie deleted');
+      this.movieService.getMovieListFromMockApi();
+      this.router.navigate(["/movies"])
+    });
+  }
+  // (removeMovie)="loadMoviesData()"
 }
