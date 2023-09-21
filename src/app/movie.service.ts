@@ -109,6 +109,13 @@ export class MovieService {
     );
   }
 
+  createMovie(newMovie: Movie) {
+    return this.http.post(
+      `https://60c98aa8772a760017203b57.mockapi.io/movies`,
+      newMovie
+    );
+  }
+  
   // addMovie(){
   //   return this.http.post<Movie[]>(
   //     'https://64f6f4259d7754084952d8a9.mockapi.io/movies', movie

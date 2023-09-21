@@ -1,0 +1,78 @@
+<header class="inputs">
+  <form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="add-Movie-Form">
+    <mat-form-field>
+      <mat-label>Movie Name</mat-label>
+      <!-- <input matInput [(ngModel)]="movieName" /> -->
+      <input matInput formControlName="movieName" />
+      <mat-error *ngIf="movieName?.touched && movieName?.hasError('required')">
+        Please fill this field
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Movie Poster</mat-label>
+      <input matInput formControlName="movieImage" />
+      <mat-error *ngIf="movieImage?.touched && movieImage?.hasError('pattern')">
+        Please provide a valid Url
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Movie Rating</mat-label>
+      <input matInput formControlName="movieRating" />
+      <mat-error
+        *ngIf="movieRating?.touched && movieRating?.hasError('required')"
+      >
+        Please fill this field
+      </mat-error>
+      <mat-error
+        *ngIf="
+          movieRating?.touched &&
+          (movieRating?.hasError('min') || movieRating?.hasError('max'))
+        "
+      >
+        Rating must be 0 to 10
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Movie Description</mat-label>
+      <input matInput formControlName="movieDescription" />
+      <mat-error
+        *ngIf="
+          movieDescription?.touched && movieDescription?.hasError('required')
+        "
+      >
+        <mat-error
+          *ngIf="
+            movieDescription?.touched && movieDescription?.hasError('minlength')
+          "
+        >
+          Please provide longer Description
+        </mat-error>
+        Pleae provide a valid Url
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Movie Trailer</mat-label>
+      <input matInput formControlName="trailer" />
+
+      <mat-error
+        *ngIf="movieTrailer?.touched && movieTrailer?.hasError('required')"
+      >
+        Fill this field
+      </mat-error>
+      <!-- <mat-error *ngIf="movieTrailer?.touched && movieTrailer?.hasError('minlength')">
+        Please provide longer trailer url 😁
+      </mat-error> -->
+
+      <mat-error
+        *ngIf="movieTrailer?.touched && movieTrailer?.hasError('pattern')"
+      >
+        Please provide valid URL
+      </mat-error>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">
+      Add New Movie
+    </button>
+  </form>
+</header>

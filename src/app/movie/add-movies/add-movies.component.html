@@ -2,5 +2,6 @@
   <app-movies
     *ngFor="let mv of movieList; let i = index"
     [movie]="mv"
+    (removeMovie)="loadMoviesData()"
   ></app-movies>
 </section>
