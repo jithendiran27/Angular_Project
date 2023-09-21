@@ -37,7 +37,7 @@ export class MoviesComponent {
   }
   constructor(private router: Router, private movieService: MovieService) {}
   movieDetailsPage() {
-    this.router.navigate(['/movies', this.movie.id]);
+    this.router.navigate([`/movies`, this.movie.id]);
   }
   deleteMovie() {
     this.movieService.deleteMovieById(this.movie.id).subscribe(() => {
@@ -48,4 +48,7 @@ export class MoviesComponent {
     });
   }
   // (removeMovie)="loadMoviesData()"
+  editPage() {
+    this.router.navigate(['/movies/edit', this.movie.id]);
+  }
 }

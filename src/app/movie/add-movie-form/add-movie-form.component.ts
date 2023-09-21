@@ -66,7 +66,7 @@ export class AddMovieFormComponent {
   }
 
   addMovie() {
-    console.log('hi');
+    console.log('New Movie Added');
 
     if (this.movieForm.valid) {
       const newMovie = this.movieForm.value;

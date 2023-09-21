@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AddMovieFormComponent } from './movie/add-movie-form/add-movie-form.component';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditMovieComponent } from './movie/edit-movie/edit-movie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     ColorBoxComponent,
     //
     WelcomeComponent,
+    EditMovieComponent,
     //
     //
   ],
