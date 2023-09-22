@@ -1,3 +1,10 @@
+<form [formGroup]="searchForm" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Search Movie</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <input formControlName="search" type="text" matInput />
+  </mat-form-field>
+</form>
 <section class="movies">
   <app-movies
     *ngFor="let mv of movieList; let i = index"

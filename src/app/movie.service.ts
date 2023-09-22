@@ -170,4 +170,9 @@ export class MovieService {
   setMovieList(newMovie: Movie) {
     return this.movies.push(newMovie);
   }
+  searchMovieList(name: string) {
+    return this.http.get<Movie[]>(
+      `https://64f6f4259d7754084952d8a9.mockapi.io/movies?name=${name}`
+    );
+  }
 }

@@ -1,7 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { MovieService } from '../../movie.service';
-import { Observable, Subscription } from 'rxjs';
+import {
+  Observable,
+  Subscription,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+} from 'rxjs';
 import { Movie } from '../../app.component';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-add-movies',
@@ -81,7 +88,14 @@ export class AddMoviesComponent {
   movieList: Array<Movie> = [];
   getMovieList: Subscription | any;
   // movieService: any;
-  constructor(private movieService: MovieService) {
+  searchForm = this.fb.group({
+    search: '',
+  });
+
+  get search() {
+    return this.searchForm.get('search');
+  }
+  constructor(private movieService: MovieService, private fb: FormBuilder) {
     // this.moviesList = movieService.movies;
   }
   ngOnInit() {
@@ -90,6 +104,16 @@ export class AddMoviesComponent {
     //   .subscribe((mvList: any) => {
     //     this.movieList = mvList;
     //   });
+
+    this.search?.valueChanges
+      .pipe(
+        debounceTime(1500),
+        distinctUntilChanged(),
+        switchMap((name) => this.movieService.searchMovieList(name || ''))
+      )
+      .subscribe((mvList) => {
+        this.movieList = mvList;
+      });
     this.loadMoviesData();
   }
 
